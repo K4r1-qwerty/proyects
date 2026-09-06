@@ -12,13 +12,45 @@
     <nav>
              <a href="index.html">Inicio </a>
              <a href="cat.html">Catalogo </a>
-             <a href="#">Reseñas </a>
+             <a href="res.html">Reseñas </a>
              <a href="cont.html">Contacto </a>
     </nav>
     <main>
-        <h2>Reseñas</h2>
-        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section>
+            <h2>Reseñas</h2>
+            <p>Explora las opiniones y experiencias de nuestros clientes con nuestras flores eternas.</p>
+        </section>
 
+        <section>
+            <h3>Agregar Reseña</h3>
+            <form action="modifica.php" method="post">
+                <fieldset>
+                    <legend>Si desea dejar una reseña favor de completar el siguiente formulario:</legend>
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                    </div>
+                    <div>
+                        <label for="review">Reseña:</label><br>
+                        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+                    </div>
+                    <div>
+                        <label for="rating">Calificación:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Seleccione una calificación</option>
+                            <option value="1">1 estrella</option>
+                            <option value="2">2 estrellas</option>
+                            <option value="3">3 estrellas</option>
+                            <option value="4">4 estrellas</option>
+                            <option value="5">5 estrellas</option>
+                        </select><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar Reseña">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
     </main>
     <footer>
         <p>Todos los derechos reservados. Flores Eternas by Karina Uribe.</p>
