@@ -21,44 +21,174 @@
             <h2>Reseñas</h2>
             <p>Explora las opiniones y experiencias de nuestros clientes con nuestras flores eternas.</p>
         </section>
+            <!-- <form action="modifica.php" method="post"> Se necesita de un servidor que ejecute php....-->
+            <!-- o se puede usar localstogage para guardar las reseñas en el navegador del usuario, pero no se podra ver en otro navegador o computadora.... -->
+            <!-- ACTUALMENTE se utiliza google form -->
+        <section>
+            <h2>Deja tu reseña</h2>
+            <p>¿Ya compraste nuestras flores eternas?
+                Cuéntanos tu experiencia.</p>
+            <a href="https://forms.gle/sxkeFt13H3ngzNzaA" target="_blank"> <button type="button">Dejar una reseña</button></a>
+        </section>
 
         <section>
-            <h3>Agregar Reseña</h3>
-            <form action="modifica.php" method="post">
-                <fieldset>
-                    <legend>Si desea dejar una reseña favor de completar el siguiente formulario:</legend>
-                    <div>
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" maxlength="50" required><br><br>
-                    </div>
-                    <div>
-                        <label for="review">Reseña:</label><br>
-                        <textarea id="review" name="review" rows="4" cols="50" placeholder="Escribe tu reseña aquí..." required></textarea><br><br>
-                    </div>
-                    <div>
-                        <label for="rating">Calificación:</label>
-                        <select id="rating" name="rating" required>
-                            <option value="">Seleccione una calificación</option>
-                            <option value="1">1 estrella</option>
-                            <option value="2">2 estrellas</option>
-                            <option value="3">3 estrellas</option>
-                            <option value="4">4 estrellas</option>
-                            <option value="5">5 estrellas</option>
-                        </select><br><br>
-                    </div>
-                    <div>
-                        <input type="submit" value="Enviar Reseña">
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-        <section>
-            <h3>Reseñas de Clientes</h3>
-            <iframe src="modifica.php" width="100%" height="400px" style="border:1px solid #cccccc;"></iframe>
+            <h2>Opiniones de nuestros clientes</h2>
+            <div id="listaReseñas">
+                <p>
+                    Cargando reseñas...
+                </p>
+            </div>
         </section>
     </main>
     <footer>
         <p>Todos los derechos reservados. Flores Eternas by Karina Uribe.</p>
     </footer>
+<script>
+
+    const URL_RESEÑAS =
+        "https://docs.google.com/spreadsheets/d/1kY9BcqJiDIuqXEgHeM07LiSh9r2kET810F4gcST7gpE/gviz/tq?tqx=out:json&gid=680286702";
+
+
+    async function cargarReseñas() {
+
+        const contenedor =
+            document.getElementById("listaReseñas");
+
+        try {
+
+            const respuesta =
+                await fetch(URL_RESEÑAS);
+
+            if (!respuesta.ok) {
+                throw new Error(
+                    "Google respondió con el código " +
+                    respuesta.status
+                );
+            }
+
+            const texto =
+                await respuesta.text();
+
+            console.log("Respuesta de Google:");
+            console.log(texto);
+
+
+            /*
+             * Google devuelve algo parecido a:
+             *
+             * google.visualization.Query.setResponse({...});
+             *
+             * Extraemos solamente el contenido que está
+             * dentro de setResponse().
+             */
+
+            const coincidencia =
+                texto.match(
+                    /google\.visualization\.Query\.setResponse\(([\s\S]*)\);?\s*$/
+                );
+
+
+            if (!coincidencia) {
+
+                throw new Error(
+                    "No se encontró la información de Google Sheets."
+                );
+
+            }
+
+
+            const datos =
+                JSON.parse(coincidencia[1]);
+
+
+            contenedor.innerHTML = "";
+
+
+            const filas =
+                datos.table.rows;
+
+
+            if (filas.length === 0) {
+
+                contenedor.innerHTML =
+                    "<p>Aún no hay reseñas.</p>";
+
+                return;
+
+            }
+
+
+            filas.forEach(fila => {
+
+                const nombre =
+                    fila.c[0]?.v || "";
+
+                const reseña =
+                    fila.c[1]?.v || "";
+
+                const calificacion =
+                    fila.c[2]?.v || "";
+
+
+                const tarjeta =
+                    document.createElement("article");
+
+
+                tarjeta.classList.add("reseña");
+
+
+                const titulo =
+                    document.createElement("h3");
+
+                titulo.textContent = nombre;
+
+
+                const estrellas =
+                    document.createElement("p");
+
+                estrellas.classList.add("estrellas");
+
+                estrellas.textContent = calificacion;
+
+
+                const textoReseña =
+                    document.createElement("p");
+
+                textoReseña.textContent = reseña;
+
+
+                tarjeta.appendChild(titulo);
+
+                tarjeta.appendChild(estrellas);
+
+                tarjeta.appendChild(textoReseña);
+
+
+                contenedor.appendChild(tarjeta);
+
+            });
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Error al cargar las reseñas:",
+                error
+            );
+
+            contenedor.innerHTML = `
+                <p>No se pudieron cargar las reseñas.</p>
+                <p>Error: ${error.message}</p>
+            `;
+
+        }
+
+    }
+
+
+    cargarReseñas();
+
+</script>
 </body>
 </html>
