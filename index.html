@@ -4,35 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flores Eternas</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header> 
-        <!-- insertar imagen de fondo aqui -->   
-        <h1>Flores Eternas</h1>
+        <div class="texto-fondo">
+        <h1 id="FE">Flores Eternas</h1>
+        </div>
     </header>
-    <nav>
+    <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
              <a href="index.html">Inicio </a>
              <a href="cat.html">Catalogo </a>
              <a href="res.html">Reseñas </a>
              <a href="cont.html">Contacto </a>
     </nav>
+    </div>
     <main>
         <section>
-            <h2>Bienvenido a Flores Eternas</h2>
+            <h2 class="titulo">Bienvenido a Flores Eternas</h2>
             <p>Descubre la belleza de nuestras flores eternas, perfectas para cualquier ocasión special.</p>
         </section>
         <section>
-            <h2>¡Bienvenido a Flores Eternas!</h2>
-            <p>En Flores Eternas, nos especializamos en ofrecer flores que duran para siempre. Nuestra misión es brindar a nuestros clientes la belleza y la elegancia de las flores eternas, perfectas para cualquier ocasión special. Explora nuestro catálogo y descubre la magia de las flores que nunca se marchitan.</p>
-        </section>
-        <section>
-        <h2>Ubicacion de local</h2>
-        <!-- insertar icono de mapa aqui -->
+        <h2 class="titulo">Ubicacion de local</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></svg>
         <p>Mexico, Edo.Mexico.</p>
         <a href="https://maps.app.goo.gl/3RFYVFWabVXaZLx37">Ver mapa</a>
     </section>
         <section>
-            <h3> Pedidos</h3>
+            <h3 class="titulo"> Pedidos</h3>
             <p>Para realizar un pedido, por favor contáctanos a través de nuestro correo electrónico o número de teléfono. Estaremos encantados de ayudarte a elegir las flores perfectas para tu ocasión special.</p>
             <a href="cont.html">Contacto </a>
         </section>

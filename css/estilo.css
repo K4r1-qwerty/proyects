@@ -1,0 +1,69 @@
+html{
+    font-size: 62.5%;
+}
+:root{ 
+    --titulos: #6980ff;
+    --subtitulos: #b769ff;
+    --negro: #000000;
+    --blanco:#ffffff;
+    --primario:#ffb516;
+    --secundario: #d427ff;
+    --fuente: 'Krub', sans-serif;
+ }
+ body{
+    font-size: 2rem;
+    font-family: 'krub', sans-serif;
+    color:var(--negro);
+}
+#FE {
+    text-align: center;
+    font-size: 2.8em;
+    color:var(--blanco);
+}
+ .titulo{
+    color: var(--titulos);
+    font-family: var(--fuente);
+    font-size: 2rem;
+ }
+  .subtitulo{
+    color: var(--subtitulos);
+    font-family: var(--fuente);
+    font-size: 1.5rem;
+ }
+footer{
+    color: grey;
+    font-size: 0.75em;
+ }
+
+.texto-fondo {
+    background-image: url("../img/fond.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 5rem;
+    color: white;
+}
+.imagen {
+    width: 3rem;
+    height: 2rem;
+}
+.navegacion-principal{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-bg{
+    background-color: var(--primario);
+}
+.contenedor{
+    width: 120rem;
+}
+.navegacion-principal a{
+    color:var(--blanco);
+    text-decoration:none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.navegacion-principal a:hover{
+    padding: 1rem;
+    background-color: var(--secundario);
+}

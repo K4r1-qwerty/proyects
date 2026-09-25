@@ -5,76 +5,61 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Flores Eternas - Reseñas</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <header>
-        <!-- insertar imagen de fondo aqui -->   
-        <h1>Flores Eternas</h1>
+   <header> 
+        <div class="texto-fondo">
+        <h1 id="FE">Flores Eternas</h1>
+        </div>
     </header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="cat.html">Catalogo</a>
-        <a href="res.html">Reseñas</a>
-        <a href="cont.html">Contacto</a>
+    <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+             <a href="index.html">Inicio </a>
+             <a href="cat.html">Catalogo </a>
+             <a href="res.html">Reseñas </a>
+             <a href="cont.html">Contacto </a>
     </nav>
-    <main>
-        <section>
-            <h2>Reseñas</h2>
-            <p>Explora las opiniones y experiencias de nuestros clientes con nuestras flores eternas.</p>
-        </section>
-        <section>
-            <h2>Deja tu reseña</h2>
-            <p>¿Ya compraste nuestras flores eternas? Cuéntanos tu experiencia.</p>
-            <a href="https://forms.gle/sxkeFt13H3ngzNzaA">Dejar una reseña</a>
-        </section>
-        <!-- para optener las reseñas enviads se utiliza google forms, google sheets y apps script para que se pueda obtener la informacion de manera (semi)automatica y se pueda mostrar en la pagina web. -->
-        <section>
-            <h2>Opiniones de nuestros clientes</h2>
-            <div id="listaReseñas">
-                <p>Cargando reseñas...</p>
+    </div>
+    <form>
+        <fieldset>
+            <legend>Si desea dejar una reseña favor de completar el siguiente formulario:</legend>
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required><br><br>
             </div>
+                    <div>
+                        <label for="review">Reseña:</label><br>
+                        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+                    </div>
+                    <div>
+                        <label for="rating">Calificación:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Seleccione una calificación</option>
+                            <option value="1">1 estrella</option>
+                            <option value="2">2 estrellas</option>
+                            <option value="3">3 estrellas</option>
+                            <option value="4">4 estrellas</option>
+                            <option value="5">5 estrellas</option>
+                        </select><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar Reseña">
+                    </div>
+                </fieldset>
+            </form>
         </section>
-    </main>
     <footer>
         <p>Todos los derechos reservados. Flores Eternas by Karina Uribe.</p>
     </footer>
-    <script> 
-    function mostrarResenas(resenas) { 
-        const contenedor = document.getElementById("listaReseñas"); 
-        contenedor.innerHTML = ""; 
-        if (!resenas || resenas.length === 0) { 
-            contenedor.innerHTML = "<p>Aún no hay reseñas publicadas.</p>"; 
-            return; 
-        } 
-        const tarjetas = document.createElement("div"); 
-        tarjetas.className = "contenedor-resenas"; 
-        resenas.forEach(function (resena) { 
-            const tarjeta = document.createElement("article"); 
-            tarjeta.className = "resena"; 
-            const nombre = document.createElement("h3"); 
-            nombre.textContent = resena.nombre; 
-            const estrellas = document.createElement("p"); 
-            estrellas.className = "estrellas"; 
-            estrellas.textContent = resena.calificacion; 
-            const texto = document.createElement("p"); 
-            texto.className = "texto-resena"; 
-            texto.textContent = resena.reseña; 
-            tarjeta.appendChild(nombre); 
-            tarjeta.appendChild(estrellas); 
-            tarjeta.appendChild(texto); 
-            tarjetas.appendChild(tarjeta);
-         }); 
-         contenedor.appendChild(tarjetas); 
-        } 
-        const URL_RESEÑAS = "https://script.google.com/macros/s/AKfycbzYPWjWTz69lhFYgAwDF4LjY9ArqZdUZiMk073jYgQHppL2DbfTTxa8-gPmi3zb8KZyLA/exec"; 
-        const script = document.createElement("script"); 
-        script.src = URL_RESEÑAS + "?callback=mostrarResenas"; 
-        script.onerror = function () { 
-            document.getElementById( "listaReseñas" ).innerHTML = "<p>No se pudieron cargar las reseñas.</p>"; 
-        }; 
-        document.body.appendChild(script); 
-    </script>
-
 </body>
 
 </html>
