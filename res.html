@@ -17,8 +17,10 @@
 </head>
 <body>
    <header> 
-        <div class="texto-fondo">
-        <h1 id="FE">Flores Eternas</h1>
+        <div class="fondo">
+            <div class="contenido-fondo">
+                <h1>Flores Eternas</h1>
+            </div>
         </div>
     </header>
     <div class="nav-bg">
@@ -29,37 +31,38 @@
              <a href="cont.html">Contacto </a>
     </nav>
     </div>
+    <main class="cuadro-principal">
     <form>
         <fieldset>
             <legend>Si desea dejar una reseña favor de completar el siguiente formulario:</legend>
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required><br><br>
-            </div>
-                    <div>
-                        <label for="review">Reseña:</label><br>
-                        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
-                    </div>
-                    <div>
-                        <label for="rating">Calificación:</label>
-                        <select id="rating" name="rating" required>
-                            <option value="">Seleccione una calificación</option>
-                            <option value="1">1 estrella</option>
-                            <option value="2">2 estrellas</option>
-                            <option value="3">3 estrellas</option>
-                            <option value="4">4 estrellas</option>
-                            <option value="5">5 estrellas</option>
-                        </select><br><br>
-                    </div>
-                    <div>
-                        <input type="submit" value="Enviar Reseña">
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-    <footer>
-        <p>Todos los derechos reservados. Flores Eternas by Karina Uribe.</p>
-    </footer>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                </div>
+                <div>
+                    <label for="review">Reseña:</label><br>
+                    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+                </div>
+                <div>
+                    <label for="rating">Calificación:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Seleccione una calificación</option>
+                        <option value="1">1 estrella</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="5">5 estrellas</option>
+                    </select><br><br>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar Reseña">
+                </div>
+        </fieldset>
+    </form>
+</main>
+<footer>
+    <p>Todos los derechos reservados. Flores Eternas by Karina Uribe.</p>
+</footer>
 </body>
 
 </html>

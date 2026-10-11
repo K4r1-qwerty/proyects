@@ -1,50 +1,76 @@
-html{
-    font-size: 62.5%;
-}
+
 :root{ 
-    --titulos: #6980ff;
-    --subtitulos: #b769ff;
+    --colorh2: #5115c0;
+    --colorh3: #8165b6;
     --negro: #000000;
+    --grisclaro:#d8d9da;
     --blanco:#ffffff;
-    --primario:#ffb516;
-    --secundario: #d427ff;
-    --fuente: 'Krub', sans-serif;
+    --primario:#470099;
+    --secundario: #dacb00;
  }
+ html{
+    font-size: 62.5%;
+    background-image:linear-gradient(to top,var(--grisclaro)0%,var(--blanco)100%);
+}
  body{
     font-size: 2rem;
-    font-family: 'krub', sans-serif;
+    line-height: 1.5;
     color:var(--negro);
 }
-#FE {
+h1{
+    font-size: 5rem;
     text-align: center;
-    font-size: 2.8em;
-    color:var(--blanco);
+    background-position: center;
+    color:var(--blanco)
 }
- .titulo{
-    color: var(--titulos);
-    font-family: var(--fuente);
-    font-size: 2rem;
- }
-  .subtitulo{
-    color: var(--subtitulos);
-    font-family: var(--fuente);
-    font-size: 1.5rem;
- }
+h2{
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--colorh2);
+}
+h3{
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--colorh3);
+}
 footer{
-    color: grey;
+    color: var(--blanco);
     font-size: 0.75em;
+    text-align: center;
  }
 
-.texto-fondo {
+.fondo {
     background-image: url("../img/fond.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    padding: 5rem;
-    color: white;
+}
+.contenido-fondo{
+    background-color: rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .imagen {
     width: 3rem;
     height: 2rem;
+}
+p{
+    text-align: center;
+}
+.cuadro-principal{
+    box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius:1rem;
+    margin: 2rem;
+}
+.cuadro-secundario{
+    box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius:1rem;
+    margin: 1rem;
 }
 .navegacion-principal{
     display: flex;
@@ -55,7 +81,7 @@ footer{
     background-color: var(--primario);
 }
 .contenedor{
-    width: 120rem;
+    width: cover;
 }
 .navegacion-principal a{
     color:var(--blanco);
@@ -64,6 +90,6 @@ footer{
     font-weight: 700;
 }
 .navegacion-principal a:hover{
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: var(--secundario);
 }
