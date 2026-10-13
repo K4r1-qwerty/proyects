@@ -7,6 +7,7 @@
     --blanco:#ffffff;
     --primario:#470099;
     --secundario: #dacb00;
+    --terciario: #e2b0ff;
  }
  html{
     font-size: 62.5%;
@@ -29,7 +30,7 @@ h2{
     color: var(--colorh2);
 }
 h3{
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     text-align: center;
     color: var(--colorh3);
 }
@@ -38,11 +39,25 @@ footer{
     font-size: 0.75em;
     text-align: center;
  }
-
+.boton{
+    background-color: var(--terciario);
+    color: var(--negro);
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    width:min-content;
+}
 .fondo {
     background-image: url("../img/fond.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
+    border-radius:1rem;
 }
 .contenido-fondo{
     background-color: rgba(0, 0, 0, 0.2); 
@@ -50,6 +65,9 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
+    border-radius:1rem;
+
 }
 .imagen {
     width: 3rem;
@@ -58,19 +76,29 @@ footer{
 p{
     text-align: center;
 }
-.cuadro-principal{
+.cuadro-forma1{
     box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
     background-color: var(--blanco);
-    padding: 2rem;
+    padding:2rem;
     border-radius:1rem;
     margin: 2rem;
 }
-.cuadro-secundario{
+.cuadro-forma2{
     box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
     background-color: var(--blanco);
     padding: 2rem;
     border-radius:1rem;
     margin: 1rem;
+}
+.cuadro-principal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+.cuadro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .navegacion-principal{
     display: flex;
@@ -79,6 +107,9 @@ p{
 
 .nav-bg{
     background-color: var(--primario);
+    box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
+    border-radius:1rem;
+    margin: 2rem;
 }
 .contenedor{
     width: cover;
@@ -92,4 +123,9 @@ p{
 .navegacion-principal a:hover{
     padding: 0.5rem;
     background-color: var(--secundario);
+}
+@media (max-width: 768px) {
+    .cuadro-principal {
+        grid-template-columns: 1fr;
+    }
 }
