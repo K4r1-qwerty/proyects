@@ -26,36 +26,52 @@
     <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
              <a href="index.html">Inicio </a>
-             <a href="cat.html">Catalogo </a>
+             <a href="cat.html">Catálogo </a>
              <a href="res.html">Reseñas </a>
              <a href="cont.html">Contacto </a>
     </nav>
     </div>
     <main class="cuadro-forma1">
-    <form>
+        <h2>Reseñas</h2>
+    <form class="formulario">
         <fieldset>
             <legend>Si desea dejar una reseña favor de completar el siguiente formulario:</legend>
-                <div>
+                <div class="contenedor-campos"></div>
+                <div class="campo">
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required><br><br>
+                    <input class="input-text" type="text" placeholder="Tu nombre">
                 </div>
-                <div>
-                    <label for="review">Reseña:</label><br>
-                    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+                <div class="campo">
+                    <label for="review">Reseña:</label>
+                    <textarea class="input-text" placeholder="Tu reseña"></textarea>
                 </div>
-                <div>
+                <div class="campo">
                     <label for="rating">Calificación:</label>
-                    <select id="rating" name="rating" required>
-                        <option value="">Seleccione una calificación</option>
-                        <option value="1">1 estrella</option>
-                        <option value="2">2 estrellas</option>
-                        <option value="3">3 estrellas</option>
-                        <option value="4">4 estrellas</option>
-                        <option value="5">5 estrellas</option>
-                    </select><br><br>
+                    <div class="contenedor-estrella">
+                    <div class="estrella">
+                        <input type="radio" id="rating5" name="rating" value="5">
+                        <label>★★★★★</label>
+                    </div>
+                    <div class="estrella">
+                        <input type="radio" id="rating4" name="rating" value="4"">
+                        <label>★★★★</label>
+                    </div>
+                    <div class="estrella">
+                        <input type="radio" id="rating3" name="rating" value="3">
+                        <label>★★★</label>
+                    </div>
+                    <div class="estrella">
+                        <input type="radio" id="rating2" name="rating" value="2">
+                        <label>★★</label>
+                    </div>
+                    <div class="estrella">
+                        <input type="radio" id="rating1" name="rating" value="1">
+                        <label>★</label>
+                    </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="submit" value="Enviar Reseña">
+                <div class="contenedor-boton">
+                    <input class="boton" type="submit" value="Enviar">
                 </div>
         </fieldset>
     </form>

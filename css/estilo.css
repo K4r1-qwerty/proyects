@@ -2,6 +2,7 @@
 :root{ 
     --colorh2: #5115c0;
     --colorh3: #8165b6;
+    --colorform:#c3c3c5;
     --negro: #000000;
     --grisclaro:#d8d9da;
     --blanco:#ffffff;
@@ -11,12 +12,16 @@
  }
  html{
     font-size: 62.5%;
-    background-image:linear-gradient(to top,var(--grisclaro)0%,var(--blanco)100%);
+    box-sizing: border-box;
+}
+* *,*:before, *:after{
+    box-sizing: inherit;
 }
  body{
     font-size: 2rem;
     line-height: 1.5;
     color:var(--negro);
+    background-image:linear-gradient(to top,var(--grisclaro)0%,var(--blanco)100%);
 }
 h1{
     font-size: 5rem;
@@ -36,21 +41,25 @@ h3{
 }
 footer{
     color: var(--blanco);
-    font-size: 0.75em;
+    font-weight: 700;
     text-align: center;
  }
 .boton{
-    background-color: var(--terciario);
-    color: var(--negro);
-    border-radius: 1.5rem;
-    text-transform: uppercase;
-    text-decoration: none;
+    background-color: var(--colorh3);
+    color: var(--blanco);
     padding: 1rem 3rem 1rem 3rem;
     margin-top: 3rem;
     font-size: 1.5rem;
-    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 90%;
     text-align: center;
-    width:min-content;
+    border:none;
+}
+.boton:hover{
+    cursor: pointer;
 }
 .fondo {
     background-image: url("../img/fond.jpg");
@@ -73,6 +82,18 @@ footer{
     width: 3rem;
     height: 2rem;
 }
+.icono{
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.segundo{
+    background-color: var(--colorh3);
+}
 p{
     text-align: center;
 }
@@ -90,15 +111,15 @@ p{
     border-radius:1rem;
     margin: 1rem;
 }
+
 .cuadro-principal{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    display: block;
+    justify-content: center;
 }
 .cuadro{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 .navegacion-principal{
     display: flex;
@@ -124,8 +145,87 @@ p{
     padding: 0.5rem;
     background-color: var(--secundario);
 }
-@media (max-width: 768px) {
-    .cuadro-principal {
-        grid-template-columns: 1fr;
+.formulario fieldset{
+    border-style: none;
+}
+.formulario{
+    background-color: var(--colorform);
+    width: min(60rem,100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario legend{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:var(--negro);
+}
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+    color:var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.input-text{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+.campo textarea{
+    height: 20rem;
+}
+.contenedor-estrella{
+    display: block;
+
+}
+.estrella{
+    color:var(--secundario);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display:flex;
+    
+}
+.estrella label{
+    color:var(--secundario);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
+}
+.contenedor-principal-catalogo{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .cuadro-principal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+.contenedor-estrella{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5rem;
+
+}
+    .boton{
+        width: min-content;
     }
+}
+@media(min-width:920px){
+    .contenedor-principal-catalogo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
 }
