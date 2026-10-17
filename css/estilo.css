@@ -78,10 +78,6 @@ footer{
     border-radius:1rem;
 
 }
-.imagen {
-    width: 3rem;
-    height: 2rem;
-}
 .icono{
     height: 10rem;
     width: 10rem;
@@ -107,7 +103,7 @@ p{
 .cuadro-forma2{
     box-shadow: 10px 10px 24px 0px rgba(32,36,42,0.35);
     background-color: var(--blanco);
-    padding: 2rem;
+    padding: 1rem;
     border-radius:1rem;
     margin: 1rem;
 }
@@ -206,6 +202,79 @@ p{
     display: flex;
     flex-direction: column;
 }
+
+.contenido{
+    display: flex;
+}
+.contenido-text h3,p{
+    text-align: left;
+    align-items: center;
+}
+.imagenrosa{
+    background-image: url(../img/ros1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 60rem;
+    position:relative;
+}
+.imagenrosa:hover{
+    background-image: url(../img/ros0.jpeg);
+    height: 35rem;
+    width: 60rem;
+}
+.imagenger{
+    background-image: url(../img/ger1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 70rem;
+    position:relative;
+}
+.imagenger:hover{
+    background-image: url(../img/ger0.png);
+    height: 20rem;
+    width: 70rem;
+}
+.imagendalia{
+    background-image: url(../img/dal1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 60rem;
+    position:relative;
+}
+.imagendalia:hover{
+    background-image: url(../img/dal0.png);
+    height: 25rem;
+    width: 60rem;
+}
+.imagengira{
+    background-image: url(../img/gira1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35rem;
+    width: 30rem;
+    position:relative;
+}
+.imagengira:hover{
+    background-image: url(../img/gira0.png);
+    height: 15rem;
+    width: 30rem;
+}
+.imagencempa{
+    background-image: url(../img/cempa1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 50rem;
+    position:relative;
+}
+.imagencempa:hover{
+    background-image: url(../img/cempa0.png);
+    height: 25rem;
+    width: 50rem;
+}
 @media (min-width: 768px) {
     .cuadro-principal{
     display: grid;
@@ -216,7 +285,6 @@ p{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2.5rem;
-
 }
     .boton{
         width: min-content;
