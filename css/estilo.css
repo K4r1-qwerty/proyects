@@ -106,6 +106,7 @@ p{
     padding: 1rem;
     border-radius:1rem;
     margin: 1rem;
+    width: min(70rem ,100%);
 }
 
 .cuadro-principal{
@@ -201,6 +202,7 @@ p{
 .contenedor-principal-catalogo{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contenido{
@@ -289,11 +291,4 @@ p{
     .boton{
         width: min-content;
     }
-}
-@media(min-width:920px){
-    .contenedor-principal-catalogo{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-}
 }
